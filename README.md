@@ -24,16 +24,22 @@ A Streamlit dashboard for visualising exported Microsoft Sentinel analytics rule
 
 ## Setup
 
+### Option 1 — Python (local)
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install streamlit pandas altair
+streamlit run app.py
 ```
 
-## Running
+Then open [http://localhost:8501](http://localhost:8501) in your browser.
+
+### Option 2 — Docker
 
 ```bash
-streamlit run app.py
+docker build -t sentinel-rule-viewer .
+docker run -p 8501:8501 sentinel-rule-viewer
 ```
 
 Then open [http://localhost:8501](http://localhost:8501) in your browser.
